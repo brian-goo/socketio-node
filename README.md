@@ -1,4 +1,4 @@
-## go-redis pubsub with websocket
+## socket.io
 
 ```bash
 # start a local dev server
