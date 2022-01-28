@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script> -->
+  <script type="module">
+    import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+    const socket = io();
+    
+    console.log(socket);
+    
+    socket.on("connect", () => {
+      console.log(socket.id, "connected")
+      socket.emit("join", "room12");
+      // socket.emit('channel', 'device01');
+    });
+
+    socket.on("enter", msg => {
+      console.log(msg)
+    });
+  </script>
+</body>
+</html>
